@@ -1,0 +1,15 @@
+{
+	"name": "Ic/wp-blocks",
+	"autoload": {
+		"psr-4": {
+			"Ic\\WpBlocks\\": "app/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Mahbubur Rahman",
+			"email": "mahbubur001@gmail.com"
+		}
+	],
+	"require": {}
+}
