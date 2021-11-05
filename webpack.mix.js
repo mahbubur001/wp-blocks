@@ -6,7 +6,7 @@ const emojic = require("emojic");
 const wpPot = require("wp-pot");
 const min = Mix.inProduction() ? ".min" : "";
 require("@tinypixelco/laravel-mix-wp-blocks");
-const IgnoreEmitPlugin = require("ignore-emit-webpack-plugin");
+// const IgnoreEmitPlugin = require("ignore-emit-webpack-plugin");
 
 if (process.env.NODE_ENV === "package") {
 	const package_path = path.resolve(__dirname);
@@ -56,7 +56,7 @@ if (
 		fs.ensureDir(languages, function (err) {
 			if (err) return console.error(err); // if file or folder does not exist
 			wpPot({
-				package: "Classified Listing",
+				package: "Radius Block",
 				bugReport: "",
 				src: "app/**/*.php",
 				domain: package_slug,
@@ -74,16 +74,18 @@ if (
 		},
 		processCssUrls: false,
 	});
+	mix
+		.block("src/blocks.js", "dist/blocks.build.js", {})
+		.block("src/frontend.js", "dist/frontend.js");
 
 	mix
 		.js(`src/admin.js`, "assets/js/admin.js")
-		.js(`src/deactivator.js`, "assets/css/deactivator.build.js")
+		.js(`src/deactivator.js`, "assets/js/deactivator.build.js")
 		.sass("src/scss/admin.scss", "assets/css/admin.css");
 
-	mix.block("src/blocks.js", "dist/blocks.build.js", {});
 }
-module.exports = {
-	plugins: [
-		new IgnoreEmitPlugin(["blocks.build.asset.php", "blocks.build.js.map"]),
-	],
-};
+// module.exports = {
+// 	plugins: [
+// 		new IgnoreEmitPlugin(["blocks.build.asset.php", "blocks.build.js.map"]),
+// 	],
+// };

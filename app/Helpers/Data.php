@@ -1,6 +1,6 @@
 <?php
 
-namespace Ic\WpBlocks\Helpers;
+namespace RT\RadiusBlocks\Helpers;
 
 class Data
 {

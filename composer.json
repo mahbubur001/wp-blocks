@@ -1,8 +1,8 @@
 {
-	"name": "Ic/wp-blocks",
+	"name": "rt/radius-blocks",
 	"autoload": {
 		"psr-4": {
-			"Ic\\WpBlocks\\": "app/"
+			"RT\\RadiusBlocks\\": "app/"
 		}
 	},
 	"authors": [

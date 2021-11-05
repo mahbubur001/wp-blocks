@@ -1,21 +1,16 @@
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+const {__} = wp.i18n;
+const {registerBlockType} = wp.blocks;
+import attributes from "./attributes"
+import edit from "./edit"
+import save from "./save"
+import "./style.scss"
 
-registerBlockType("ic-wp-blocks/title", {
-	title: __("Ic Title", "ultimate-blocks"),
-	keywords: [
-		__("Heading", "ultimate-blocks"),
-		__("Advanced Heading", "ultimate-blocks"),
-		__("Ultimate Blocks", "ultimate-blocks"),
-	],
-	attributes: {
-		fname: {
-			type: "string",
-			default: "",
-		},
-	},
-	edit: () => {
-		return [];
-	},
-	save: () => null,
+registerBlockType("rt-radius-blocks/title", {
+    title: __("Radius Title", "radius-blocks"),
+    keywords: [
+        __("Heading", "radius-blocks")
+    ],
+    attributes,
+    edit,
+    save
 });

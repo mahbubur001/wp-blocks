@@ -37,5 +37,8 @@
 		"sass": "^1.43.4",
 		"sass-loader": "^12.1.0",
 		"wp-pot": "^1.9.9"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^5.2.4"
 	}
 }
